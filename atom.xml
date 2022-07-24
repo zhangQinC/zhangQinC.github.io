@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zhang&#39;s blog</title>
+  
+  <subtitle>blog</subtitle>
+  <link href="https://zhangqinc.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://zhangqinc.github.io/"/>
+  <updated>2022-07-24T09:22:59.266Z</updated>
+  <id>https://zhangqinc.github.io/</id>
+  
+  <author>
+    <name>Zhang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Array</title>
+    <link href="https://zhangqinc.github.io/2022/07/23/Array/"/>
+    <id>https://zhangqinc.github.io/2022/07/23/Array/</id>
+    <published>2022-07-23T07:49:06.000Z</published>
+    <updated>2022-07-24T09:22:59.266Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>​数组存储相同类型值的序列。</p><p>​数组是一种数据结构，用来存储同一类型值的集合。</p><h2 id="声明数组"><a href="#声明数组" class="headerlink" title="声明数组"></a>声明数组</h2><p>通过一个整型下标（index）或者称为索引，可以访问数组中的每一个值。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例如： 如果 a 是一个整型数组（int[]）,</span><br><span class="line">  a[i] 即为数组中下标为i的整数。</span><br></pre></td></tr></table></figure><p>声明数组时需要指出数组类型(数据元素类型后紧跟 [] )以及数组名。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] a;</span><br></pre></td></tr></table></figure><p>上述语句只声明了一个变量a，并没有将它真正初始化为一个数组，应该用new操作符创建数组：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">100</span>];</span><br><span class="line"><span class="comment">// 此语句声明并初始化了一个可以存储100个int型数据元素的数组。</span></span><br><span class="line"><span class="comment">//即声明格式为:</span></span><br><span class="line"><span class="comment">//数据类型[] 变量名 = new 数据类型[数组长度]</span></span><br></pre></td></tr></table></figure><blockquote><p>定义一个数组变量有两种方法：</p><p>int[] a;</p><p>int a[];</p><p>这里建议用第一种，因为它更加清晰更容易理解，它将变量名和数据类型分开</p></blockquote><ul><li>数组长度不要求是常量，即也可为变量。</li><li>一旦创建了数组，它的长度就固定了，不能再做改变，</li><li>数组元素的值可以任意改变</li></ul><blockquote><p>程序运行中需要经常扩展数组的大小，这时我们可以声明一个新的更大的数组，再将需要扩展的数组的元素拷贝到新的数组。</p><p>但是当需要扩展数组大小时我们应该使用另一种数据结构——数组列表（array list）</p></blockquote><p>Java中，提供了叶子红创建数组对象并为其提供初始值的简写形式：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"><span class="comment">// 此语法不需要new，甚至不需要指定数组长度。</span></span><br><span class="line"><span class="comment">// 最后一个值后面允许有逗号。</span></span><br></pre></td></tr></table></figure><p>注：数组允许重新初始化。</p><h2 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h2><p><code>int[] a = new int[100]</code></p><p>此数组的下标是 0-99，而不是 1-100。</p><p><strong>创建一个数组时：</strong></p><ul><li>所有元素都会被初始化为0</li><li>boolean 数组的元素会被初始化为 false</li><li>对象数组的元素会被初始化为null，表示这些元素还未存放任何对象。</li></ul><blockquote><p>注：如果试图访问数组范围以外的数据<code>eg: a[100]</code>,即越界，就会引发“array index out of bounds”异常。</p></blockquote><p>要获取数组长度可以使用<code>array.length</code>。</p><h2 id="for-each-循环"><a href="#for-each-循环" class="headerlink" title="for each 循环"></a>for each 循环</h2><p><code>for each</code>是Java中一种功能很强的循环结构，额可以用来依次处理数组或者其他元素集合中的每一个值，而<strong>不用去考虑下标值</strong>。</p><p>增强for循环的语句格式:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (variable : collection) statement</span><br></pre></td></tr></table></figure><p>for each 循环语句会遍历数组中的每一个元素</p><blockquote><p>当然，使用传统的for循环也能实现相同的效果</p><p>但是for each的代码更加简洁，不易出错， 你可以不必担心下标的起始问题。</p><p>当然，for each只适用于遍历数组的所有元素的情况。<strong>很多情况下仍要使用传统的for循环。</strong></p></blockquote><blockquote><p>利用Arrays类中的<code>toString</code>方法可以更加简单快速的打印数组中的所有元素。</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h1&gt;&lt;p&gt;​	数组存储相同类型值的序列。&lt;/p&gt;
+&lt;p&gt;​	数组是一种数据结构，用来存储同一类型值的集合。&lt;/p&gt;
+&lt;h2 id=&quot;声明数组&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/categories/Java-SE/"/>
+    
+    
+    <category term="-Java SE" scheme="https://zhangqinc.github.io/tags/Java-SE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://zhangqinc.github.io/2022/07/23/hello-world/"/>
+    <id>https://zhangqinc.github.io/2022/07/23/hello-world/</id>
+    <published>2022-07-23T05:24:15.056Z</published>
+    <updated>2022-07-23T05:24:15.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
