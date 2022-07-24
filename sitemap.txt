@@ -1,8 +1,9 @@
 https://zhangqinc.github.io/2022/07/23/Array/
+https://zhangqinc.github.io/2022/07/24/Class/
 https://zhangqinc.github.io/tags/index.html
+https://zhangqinc.github.io/repository/index.html
 https://zhangqinc.github.io/categories/index.html
 https://zhangqinc.github.io/links/index.html
-https://zhangqinc.github.io/repository/index.html
 https://zhangqinc.github.io/books/index.html
 https://zhangqinc.github.io/about/index.html
 https://zhangqinc.github.io/404.html

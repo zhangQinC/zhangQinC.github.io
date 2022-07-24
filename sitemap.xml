@@ -11,7 +11,25 @@
   </url>
   
   <url>
+    <loc>https://zhangqinc.github.io/2022/07/24/Class/</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhangqinc.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhangqinc.github.io/repository/index.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     
@@ -30,15 +48,6 @@
   
   <url>
     <loc>https://zhangqinc.github.io/links/index.html</loc>
-    
-    <lastmod>2022-07-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhangqinc.github.io/repository/index.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     
