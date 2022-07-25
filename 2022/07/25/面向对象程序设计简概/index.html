@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>面向对象程序设计简概 | chuan&#39;s blog</title>
+  <meta name="description" content="4.1 面向对象程序设计概述4.2.1 对象与对象变量Java中，要想使用变量，首先必须先构造对象，并指定其初始状态（初始化），然后对对象应用方法。 对象和对象变量的重要区别Date deadline; 定义了一个对象变量deadline，它可以引用Date类型的对象，但它不是一个对象，所以此时还不能在其上使用任何Date方法。 此时可以让它引用一个新构造的对象或者一个已存在的对象 deadlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象程序设计简概">
+<meta property="og:url" content="https://zhangqinc.github.io/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/index.html">
+<meta property="og:site_name" content="zhang&#39;s blog">
+<meta property="og:description" content="4.1 面向对象程序设计概述4.2.1 对象与对象变量Java中，要想使用变量，首先必须先构造对象，并指定其初始状态（初始化），然后对对象应用方法。 对象和对象变量的重要区别Date deadline; 定义了一个对象变量deadline，它可以引用Date类型的对象，但它不是一个对象，所以此时还不能在其上使用任何Date方法。 此时可以让它引用一个新构造的对象或者一个已存在的对象 deadlin">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-25T10:02:15.000Z">
+<meta property="article:modified_time" content="2022-07-25T10:06:12.874Z">
+<meta property="article:author" content="Zhang">
+<meta property="article:tag" content="Core Java">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://zhangqinc.github.io/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="zhang&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/zhangQinC" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">zhangQinC</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Develop &amp; Design Leaner</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Xi&#39;an, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-SE/">Java SE</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Core-Java/" rel="tag">Core Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-SE/" rel="tag">Java SE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Core-Java/" style="font-size: 13px;">Core Java</a> <a href="/tags/Java-SE/" style="font-size: 14px;">Java SE</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 14px;">面试题</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/" class="title">面向对象程序设计简概</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T10:02:15.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/" class="title">面向对象的三大特征</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T09:30:25.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/" class="title">接口和抽象类</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T09:30:02.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/24/autoboxing/" class="title">autoboxing</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-24T11:38:27.000Z" itemprop="datePublished">2022-07-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/24/Class/" class="title">Java中常用Class</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-24T10:44:13.000Z" itemprop="datePublished">2022-07-24</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-面向对象程序设计简概" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象程序设计简概
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/" class="article-date">
+	  <time datetime="2022-07-25T10:02:15.000Z" itemprop="datePublished">2022-07-25</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Java-SE/">Java SE</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Core-Java/" rel="tag">Core Java</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="4-1-面向对象程序设计概述"><a href="#4-1-面向对象程序设计概述" class="headerlink" title="4.1 面向对象程序设计概述"></a>4.1 面向对象程序设计概述</h1><h2 id="4-2-1-对象与对象变量"><a href="#4-2-1-对象与对象变量" class="headerlink" title="4.2.1 对象与对象变量"></a>4.2.1 对象与对象变量</h2><p>Java中，要想使用变量，首先必须先构造对象，并指定其初始状态（初始化），然后对对象应用方法。</p>
+<h3 id="对象和对象变量的重要区别"><a href="#对象和对象变量的重要区别" class="headerlink" title="对象和对象变量的重要区别"></a>对象和对象变量的重要区别</h3><p><code>Date deadline;</code></p>
+<p>定义了一个对象变量deadline，它可以引用Date类型的对象，但它不是一个对象，所以此时还不能在其上使用任何Date方法。</p>
+<p><strong>此时可以让它引用一个新构造的对象或者一个已存在的对象</strong></p>
+<p><code>deadline = new Date();</code></p>
+<p><code>deadline = birthday;</code></p>
+<blockquote>
+<p><em><strong>对象变量并没有实际包含一个对象，它只是引用一个对象</strong></em></p>
+<blockquote>
+<p>相当于一个指针</p>
+</blockquote>
+<p>Java中，任何对象变量的值都是对存储在另一个地方的某个对象的引用，new操作符的返回值也是一个引用。</p>
+</blockquote>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><blockquote>
+<p>Java中没有类就无法做任何事情</p>
+</blockquote>
+<p>要想使用对象，首先必须构造对象，并指定其初始状态，然后再对对象应用方法。</p>
+<p><em>Java中，要使用构造器（constructor）构造新实例。</em></p>
+<h3 id="构造器定义"><a href="#构造器定义" class="headerlink" title="构造器定义"></a>构造器定义</h3><p><em><strong>构造器是一种用来构造并初始化对象的特殊方法。</strong></em></p>
+<blockquote>
+<p>java用类描述时间，这样的话，如果类设计的不完善，不符合使用者的要求，其他程序员就要很容易的修改、编写自己的类，以便增强或替代系统提供的类。</p>
+</blockquote>
+<h3 id="构造器的结构及特性"><a href="#构造器的结构及特性" class="headerlink" title="构造器的结构及特性"></a>构造器的结构及特性</h3><ol>
+<li>构造器的名字应该和类名一致</li>
+<li>要构造一个对象需要在构造器前面加new操作符</li>
+</ol>
+<blockquote>
+<p>eg : new Date()</p>
+</blockquote>
+<p><strong>如果需要的话，也可以将这个对象传给一个方法</strong></p>
+<blockquote>
+<p>eg : <code>System.out.println(new Date());</code></p>
+</blockquote>
+<p><strong>也可以直接对刚创建的对象应用一个方法</strong></p>
+<ul>
+<li>Date类中的toString方法将返回日期的字符串描述</li>
+</ul>
+<blockquote>
+<p><code>String s = new Date().toString();</code></p>
+</blockquote>
+<p><em><strong>以上两个构造对象都仅仅使用了一次。而一般情况下，需要将构造对象使用多次，就需要将对象存在一个变量中。</strong></em>、</p>
+<blockquote>
+<p><code>Date birthday = new Date();</code></p>
+</blockquote>
+<ul>
+<li>构造器与类同名</li>
+<li>每个类可以有一个以上的构造器（类似于重载）</li>
+<li>构造器可以有0个，1个或多个参数（任意个）</li>
+<li>构造器没有返回值</li>
+<li>构造器总是伴随着new操作符一起调用</li>
+</ul>
+<h2 id="4-3-5-用var声明局部变量"><a href="#4-3-5-用var声明局部变量" class="headerlink" title="4.3.5 用var声明局部变量"></a>4.3.5 用var声明局部变量</h2><p>Java 10 中，若可从变量的初始值推导出他的类型，就可以用var关键字，声明局部变量，无需指定类型</p>
+<p>eg：</p>
+<p><code>Employee harry = new Employee(&quot;Harry Hacker&quot;, 50000, 1989,10,1);</code></p>
+<p>只需</p>
+<p><code>var harry = new Employee(&quot;Harry Hacker&quot;, 50000, 1989,10,1);</code></p>
+<blockquote>
+<p>不会对数值类型使用var 如int、long、double等</p>
+</blockquote>
+<ul>
+<li>var关键字只能用于方法中的局部变量，而参数和字段的类型必须声明。</li>
+</ul>
+<h2 id="4-3-6-使用null引用"><a href="#4-3-6-使用null引用" class="headerlink" title="4.3.6 使用null引用"></a>4.3.6 使用null引用</h2><ul>
+<li><p>一个对象变量包含一个对象的引用，或者包含一个特殊的null值用来表示没有引用任何对象。</p>
+</li>
+<li><p>如果对null值应用一个方法，会产生一个NullPointerException异常</p>
+</li>
+<li><blockquote>
+<p>且正常情况下，程序并不会捕获这些异常</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="4-3-7-隐式参数和显示参数"><a href="#4-3-7-隐式参数和显示参数" class="headerlink" title="4.3.7 隐式参数和显示参数"></a>4.3.7 隐式参数和显示参数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">raiseSalary</span><span class="params">(<span class="type">double</span> byPercent)</span>&#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">raise</span> <span class="operator">=</span> salary * byPercent / <span class="number">100</span>;</span><br><span class="line">    salary += raise;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>raiseSalary 方法有两个参数。</p>
+<ul>
+<li>第一个参数为隐式（implicit）参数，是出现在方法名前的Employee类型的对象。（有人把隐式参数称为方法调用的目标或接收者）。</li>
+<li>第二个参数是位于方法名后面括号中的数值，即显式（explicit）参数。</li>
+</ul>
+<blockquote>
+<p>显式参数显式的列在方法声明中</p>
+<p>隐式参数没有出现在方法声明中</p>
+</blockquote>
+<p><em><strong>在每一个方法中，关键字this 指示隐式参数。即：</strong></em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">raiseSalary</span><span class="params">(<span class="type">double</span> byPercent)</span>&#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">raise</span> <span class="operator">=</span> <span class="built_in">this</span>.salary * byPercent / <span class="number">100</span>;</span><br><span class="line">    <span class="built_in">this</span>.salary += raise;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-3-8-封装的优点"><a href="#4-3-8-封装的优点" class="headerlink" title="4.3.8 封装的优点"></a>4.3.8 封装的优点</h2><ul>
+<li>数据字段均设为私有的</li>
+<li>一个公共的字段访问器方法（Getter）</li>
+<li>一个公共的字段更改器方法（Setter）</li>
+</ul>
+<blockquote>
+<p><em><strong>注：不要编写返回可变对象引用的访问器方法</strong></em></p>
+</blockquote>
+<h2 id="4-3-9-基于类的访问权限"><a href="#4-3-9-基于类的访问权限" class="headerlink" title="4.3.9 基于类的访问权限"></a>4.3.9 基于类的访问权限</h2><ul>
+<li><p>方法可以访问调用这个方法的对象的私有数据</p>
+</li>
+<li><blockquote>
+<p>一个方法可以访问所属类的<em><strong>所有</strong></em>对象的私有数据</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="4-3-10-私有方法"><a href="#4-3-10-私有方法" class="headerlink" title="4.3.10 私有方法"></a>4.3.10 私有方法</h2><blockquote>
+<p>公共数据非常危险，所以应该将所有的数据字段都设置为私有的</p>
+</blockquote>
+<ul>
+<li><p>使用private设置方法为私有</p>
+</li>
+<li><p>只要方法是私有的，类的设计者就可以确信它不会在别处使用，所以可以不用时删除</p>
+</li>
+<li><blockquote>
+<p>如果一个方法是公共的，就不能简单的将其删除，因为可能会有其他的代码依赖这个方法。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="4-3-11-final-实例字段"><a href="#4-3-11-final-实例字段" class="headerlink" title="4.3.11 final 实例字段"></a>4.3.11 final 实例字段</h2><ul>
+<li>在定义实例字段时候可以将其定义为final</li>
+</ul>
+<p>eg： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>这样的字段必须在构造对象时初始化</strong></em></p>
+<p><em>即确保在每一个构造器执行之后，这个设置为final的字段的值已经被设置，且不能再更改</em></p>
+<blockquote>
+<p>因为再对象构造之后，这个值不会再改变，所以没有setName方法</p>
+</blockquote>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li>用于类型为基本类型或者不可变类的字段（类中的所有方法都不会改变其对象，这样的类就是不可变的类).如：String类就是不可变类</li>
+</ul>
+<h1 id="4-4-静态字段和静态方法"><a href="#4-4-静态字段和静态方法" class="headerlink" title="4.4 静态字段和静态方法"></a>4.4 静态字段和静态方法</h1><h2 id="4-4-1-静态字段"><a href="#4-4-1-静态字段" class="headerlink" title="4.4.1 静态字段"></a>4.4.1 静态字段</h2><blockquote>
+<p>如果将一个字段定义为static ，每个类只有一个这样的字段</p>
+<p>而对于非静态的实例字段，每个对象都有自己的一个副本</p>
+<ul>
+<li>eg:若需要给每一个员工赋予唯一的标识码，这里添加一个实例字段id和一个静态字段nextId；</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">nextId</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> id;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>设置为static之后，所有的Employee类的实例将共享一个此字段，即，每一个Employee对象都有属于自己的实例字段id，但是它们只有一个静态字段nextId，且即使还没有Employee对象，但是静态字段nextId仍然存在。即，它属于这整个类，而不是单独属于类的某个对象。</strong></em></p>
+<blockquote>
+<p>在一些面向对象程序设计语言中，静态字段被称为<em>类字段</em>。静态二字只是沿用了C++的叫法，而没有实际意义。</p>
+</blockquote>
+<h2 id="4-4-2-静态常量"><a href="#4-4-2-静态常量" class="headerlink" title="4.4.2 静态常量"></a>4.4.2 静态常量</h2><blockquote>
+<p>静态变量使用的比较少，但静态常量很常用</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Math</span>&#123;</span><br><span class="line"> ...</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">double</span> <span class="variable">PI</span> <span class="operator">=</span> <span class="number">3.14159265358979</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>在程序中可以用Math.PI来访问这个常量</p>
+<ul>
+<li>若省略关键字static，PI就变成了Math类的一个实例字段，而成为实例字段之后就需要通过Math的一个对象来访问PI，并且每一个Math对象都有它自己的一个副本。</li>
+</ul>
+<p><em><strong>最好不要有公共字段，但是公共常量（final字段）却完全可以有，因为其被声明为final，所以不允许被重新赋值。</strong></em></p>
+<blockquote>
+<p>注：System类中有一个setOut方法可以将System.out 设置为不同的流，而改变了final变量的值。这里用了一个原生方法。</p>
+<p>原生方法是一种特殊的解决方法，可以绕过 Java 语言的访问控制机制。</p>
+</blockquote>
+<h2 id="4-4-3-静态方法"><a href="#4-4-3-静态方法" class="headerlink" title="4.4.3 静态方法"></a>4.4.3 静态方法</h2><ul>
+<li><p>静态方法是不在对象上执行的方法</p>
+</li>
+<li><blockquote>
+<p>eg: </p>
+<p>Math类的pow方法就是一个静态方法</p>
+<p>使用此方法时并不使用任何Math对象，也就是说它没有隐式参数。即没有this参数的方法。</p>
+</blockquote>
+<p><em><strong>Employee 类的静态方法不能访问 id 实例字段，因为他不能在对象上执行操作。但是静态方法可以刚问静态字段</strong></em>、</p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getNextId</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> nextId; <span class="comment">// returns static field</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以提供类名来调用这个方法：</li>
+</ul>
+<p><code>int n = Employee.getNextId();</code></p>
+<p><em><strong>若省略了关键字 static 就需要通过 Employee 类对象的引用来调用这个方法</strong></em></p>
+</li>
+</ul>
+<blockquote>
+<p>若使用对象调用静态方法也是合法的，但是这种写法容易混淆，所以最好使用类名来调用静态方法，而不是使用对象。</p>
+</blockquote>
+<h3 id="使用静态方法的情况"><a href="#使用静态方法的情况" class="headerlink" title="使用静态方法的情况"></a>使用静态方法的情况</h3><ol>
+<li>方法不需要访问对象状态，因为他需要的所有参数都通过显式参数提供（eg：<code>Math.pow</code>）</li>
+<li>方法只需要访问类的&#x3D;&#x3D;静态字段&#x3D;&#x3D;（eg：<code>Employee.getNextId</code>）</li>
+</ol>
+<blockquote>
+<p>可以调用静态方法而不需要任何对象，eg：不需要构造<code>Math</code>类的任何对象就可以调用<code>Math.pow</code></p>
+</blockquote>
+<h2 id="4-4-4-工厂方法"><a href="#4-4-4-工厂方法" class="headerlink" title="4.4.4 工厂方法"></a>4.4.4 工厂方法</h2><p>即静态方法的另一种用途：<em><strong>静态工厂方法</strong></em></p>
+<p>类似于 <code>LocalDate</code> 和<code>NumberFormat</code> 的类使用静态工厂方法（factory method）来构造对象。</p>
+<ul>
+<li>如工厂方法<code>LocalDate.now</code>和<code>LocalDate.of</code></li>
+</ul>
+<p><em>特性及优点</em></p>
+<h2 id="4-4-5-main方法"><a href="#4-4-5-main方法" class="headerlink" title="4.4.5 main方法"></a>4.4.5 main方法</h2><blockquote>
+<p>main 方法也是一个静态方法</p>
+<ul>
+<li>main方法不对任何对象进行操作。</li>
+<li>在启动程序时还没有任何对象，而静态的main方法将执行并构造程序所需要的对象</li>
+</ul>
+<blockquote>
+<p><strong>每一个类都可以有一个main方法</strong>，这是常用于对类进行单元测试的一个技巧</p>
+<ul>
+<li>如，可以在 Employee 类中添加一个 main 方法，见程序4-3</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="程序清单4-3-StaticTest"><a href="#程序清单4-3-StaticTest" class="headerlink" title="程序清单4-3 StaticTest"></a>程序清单4-3 <code>StaticTest</code></h3><h1 id="4-5-方法参数"><a href="#4-5-方法参数" class="headerlink" title="4.5 方法参数"></a>4.5 方法参数</h1><p>如何将参数传递给方法的一些专业术语：</p>
+<ul>
+<li><p><strong>安置调用</strong>（call by value）表示方法接收的是调用者提供的值</p>
+</li>
+<li><p><strong>按引用调用</strong>（call by reference)表示方法接收的是调用者提供的变量地址</p>
+</li>
+<li><blockquote>
+<p>方法可以修改按引用传递的变量的值，但是不能修改按值传递的变量的值。</p>
+</blockquote>
+<p>“按……调用”（call by）是一个标准的计算机科学术语，用来描述各种程序设计语言中方法参数的传递方式。</p>
+<p>实际上还有按名调用，但是这种传递方式已经成为历史</p>
+</li>
+</ul>
+<p><em><strong>Java 总是采用按值调用</strong></em>，也就是说，方法得到的是所有参数值的一个<strong>副本</strong>。</p>
+<p>所以方法<strong>不能修改</strong>传递给它的任何参数变量的内容。</p>
+<p>而<strong>参数类型</strong>有<strong>两种</strong>：</p>
+<ol>
+<li>基本数据类型（布尔、数值）</li>
+<li>对象引用</li>
+</ol>
+<blockquote>
+<p>一个方法不可能修改基本数据类型的参数，但可以修改对象引用的参数</p>
+<ul>
+<li><strong>虽然方法通过参数得到的是一个对象引用的副本，但是原来的对象引用和此副本引用的是同一个对象</strong></li>
+</ul>
+</blockquote>
+<p>eg：利用下面这个方法将一个员工的工资增长至三倍</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">tripleSalary</span><span class="params">(Employee x)</span>&#123;</span><br><span class="line">    x.raiseSalary(<span class="number">200</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">harry = <span class="keyword">new</span> <span class="title class_">Employee</span>(...);</span><br><span class="line">tripleSalary(harry);</span><br></pre></td></tr></table></figure>
+
+<p>具体的执行过程为:</p>
+<ol>
+<li>x初始化为harry值的一个副本，这里就是一个对象引用</li>
+<li><code>raiseSalary</code>方法应用于这个对象引用。x和harry同时引用的那个Employee对象的工资提高了200%</li>
+<li>方法结束后，参数变量x不再使用，然后对象变量harry继续引用那个工资增长至三倍的员工对象</li>
+</ol>
+<h2 id="Java语言对对象采用的并不是按引用调用的参数传递方式"><a href="#Java语言对对象采用的并不是按引用调用的参数传递方式" class="headerlink" title="Java语言对对象采用的并不是按引用调用的参数传递方式"></a>Java语言对对象采用的并不是按引用调用的参数传递方式</h2><blockquote>
+<p>很多人都认为Java采用的引用调用（甚至有些书的作者）</p>
+</blockquote>
+<p>反例：</p>
+<ul>
+<li>首先编写一个交换两个Employee对象的方法；</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(Employee x, Employee y)</span>&#123;</span><br><span class="line">    <span class="type">Employee</span> <span class="variable">temp</span> <span class="operator">=</span> x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>若Java对对象采用的是按引用调用，那么这个方法可以实现调换</strong></p>
+<p>但是：</p>
+<blockquote>
+<p>此方法并没有改变存储在变量中的对象引用。而是交换了两个副本。<strong>因为&#96;&#96;swap&#96;方法的参数 x 和 y 被初始化为两个对象引用的副本</strong>。</p>
+<ul>
+<li><strong>实际上对象引用时按值传递的</strong></li>
+</ul>
+</blockquote>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>（Java中对方法参数能做什么和不能做什么）</p>
+<ol>
+<li>方法不能修改基本数据类型的参数</li>
+<li>方法可以改变对象参数的状态</li>
+<li>方法不能让一个对象参数引用一个新的对象</li>
+</ol>
+<h2 id="Demo：程序清单-4-4"><a href="#Demo：程序清单-4-4" class="headerlink" title="Demo：程序清单 4-4"></a>Demo：程序清单 4-4</h2><p><code>ParamTest</code></p>
+<h1 id="4-6-对象的构造"><a href="#4-6-对象的构造" class="headerlink" title="4.6 对象的构造"></a>4.6 对象的构造</h1><p><em><strong>构造器可以定义对象的初始状态，但是由于对象构造非常重要，所以Java 提供了多种编写构造器的机制</strong></em></p>
+<h2 id="4-6-1-重载"><a href="#4-6-1-重载" class="headerlink" title="4.6.1 重载"></a>4.6.1 重载</h2><blockquote>
+<p><strong>多个方法有相同的名字、不同的参数，即出现了重载。</strong></p>
+<p>此时调用方法时编译器需要通过各个方法首部中的参数类型与特定方法调用中所使用的值类进行匹配来选出正确的方法。</p>
+<ul>
+<li>此过程称为<strong>重载解析</strong>。</li>
+</ul>
+</blockquote>
+<ul>
+<li><em><strong>Java 允许重载任何方法</strong></em></li>
+<li>要完整的描述一个方法，需要指定方法名以及参数类型，这叫方法的签名</li>
+<li>返回类型不是方法签名的一部分，所以不能有两个名字相同、参数类型也相同却有不同返回类型的方法</li>
+</ul>
+<h2 id="4-6-2-默认字段初始化"><a href="#4-6-2-默认字段初始化" class="headerlink" title="4.6.2 默认字段初始化"></a>4.6.2 默认字段初始化</h2><ul>
+<li>如果在构造器中额米有显式的为字段设置初值，那么就会被自动的赋为默认值：（0， null， 或false）</li>
+</ul>
+<p>这也是字段和局部变量的一个重要区别</p>
+<p>-&gt; <strong>方法中发局部变量必须明确的初始化。但是在类中，如果没有初始化类中的字段，将会自动初始化为默认值</strong></p>
+<h2 id="4-6-3-无参数的构造器"><a href="#4-6-3-无参数的构造器" class="headerlink" title="4.6.3 无参数的构造器"></a>4.6.3 无参数的构造器</h2><ul>
+<li>当写一个类时候没有编写构造器，就会自动提供一个无参的构造器</li>
+<li>若设置了构造器，默认给的就无了</li>
+</ul>
+<blockquote>
+<p>通过重载类的构造器方法，可以采用多种形式设置类的实例字段的初始状态</p>
+</blockquote>
+<h2 id="4-6-4-显式字段初始化"><a href="#4-6-4-显式字段初始化" class="headerlink" title="4.6.4 显式字段初始化"></a>4.6.4 显式字段初始化</h2><p>调用构造器，每个实例字段都要设置为一个有意义的初值</p>
+<ul>
+<li><p>可以在类定义中直接为任何字段赋值，如： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果一个类的所有构造器都希望把某个特定的实例字段设置为同一个值，就很有用</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>而初值不一定是常量值，可以利用方法调用初始化一个字段</p>
+</blockquote>
+<p>eg:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> nextId;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> assignId();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">assignId</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">r</span> <span class="operator">=</span> nextId;</span><br><span class="line">        nextId++;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在 C++ 中，不能直接初始化类的实例字段。所有的字段都必须在构造器中设置。</p>
+</blockquote>
+<h2 id="4-6-5-参数名"><a href="#4-6-5-参数名" class="headerlink" title="4.6.5 参数名"></a>4.6.5 参数名</h2><p>编写小构造器命名技巧：</p>
+<ol>
+<li>在每个参数前面加上一个前缀“a”。</li>
+<li>使用关键字 this</li>
+</ol>
+<h2 id="4-6-6-调用另一个构造器"><a href="#4-6-6-调用另一个构造器" class="headerlink" title="4.6.6 调用另一个构造器"></a>4.6.6 调用另一个构造器</h2><p><em><strong>构造器调用同一个类中的另一个构造器</strong></em>，<code>this(/*参数*/)</code></p>
+<ul>
+<li>一个构造器中最多只能调用一个构造器</li>
+<li>必须写在构造器执行体的第一行语句</li>
+<li>使用this调用另一个重载构造器，只能在构造器中使用</li>
+</ul>
+<h2 id="4-6-7-初始化块"><a href="#4-6-7-初始化块" class="headerlink" title="4.6.7 初始化块"></a>4.6.7 初始化块</h2><p>两种初始化数据字段的方法：</p>
+<ul>
+<li>在构造器中设置值</li>
+<li>在声明中赋值</li>
+</ul>
+<p><em><strong>Java还有第三种机制 -&gt; 初始化块（initialization block）</strong></em></p>
+<blockquote>
+<p>在一个类的声明中，可以包含任意多个代码块。只要构造这个类的对象，这些块就会被执行。</p>
+</blockquote>
+<p><strong>调用构造器时，会首先运行初始化块，然后才运行构造器的主体部分</strong></p>
+<p>（这种机制不必需，不常见）</p>
+<h3 id="调用构造器的具体处理步骤"><a href="#调用构造器的具体处理步骤" class="headerlink" title="调用构造器的具体处理步骤"></a>调用构造器的具体处理步骤</h3><ol>
+<li>如果构造器的第一行调用了另一个构造器，则基于所提供的参数执行第二个构造器，否则:</li>
+<li><ol>
+<li>所有数据字段初始化为其默认值</li>
+<li>按照在类声明中出现的顺序，执行所有字段初始化方法和初始化块</li>
+</ol>
+</li>
+<li>执行构造器主体代码</li>
+</ol>
+<h3 id="程序清单-4-5"><a href="#程序清单-4-5" class="headerlink" title="程序清单 4-5"></a>程序清单 4-5</h3><p>其中展示了本节许多特性：</p>
+<ul>
+<li>重载构造器</li>
+<li>用this（…）调用另一个构造器</li>
+<li>无参数构造器</li>
+<li>对象初始化块</li>
+<li>静态初始化块</li>
+<li>实例字段初始化</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jeep_ouc/article/details/26412191" title="CSDN"><strong>静态初始化块、初始化块和构造方法的理解</strong></a></p>
+<h2 id="API-java-util-Random"><a href="#API-java-util-Random" class="headerlink" title="API java.util.Random"></a>API java.util.Random</h2><ul>
+<li><p>Random()</p>
+<p>构造一个新的随机数生成器</p>
+</li>
+<li><p>int nextInt(int n)</p>
+<p>返回一个0~n-1之间的随机数</p>
+</li>
+</ul>
+<h2 id="4-6-8-对象析构与-finalize-方法"><a href="#4-6-8-对象析构与-finalize-方法" class="headerlink" title="4.6.8 对象析构与 finalize 方法"></a>4.6.8 对象析构与 finalize 方法</h2><h1 id="4-7-包"><a href="#4-7-包" class="headerlink" title="4.7 包"></a>4.7 包</h1><p>Java允许使用包（package），将类组织在一个集合中，借助包可以方便的组织自己的代码，并将自己的代码与别人提供的代码，库分开管理。</p>
+<h2 id="4-7-1-包名"><a href="#4-7-1-包名" class="headerlink" title="4.7.1 包名"></a>4.7.1 包名</h2><blockquote>
+<p>使用包的主要原因是要确保类名的唯一性</p>
+<p>即同名类放在不同包中就不会产生冲突</p>
+<blockquote>
+<p>以域名的逆序的形式作为包名</p>
+</blockquote>
+</blockquote>
+<h2 id="4-7-2-类的导入"><a href="#4-7-2-类的导入" class="headerlink" title="4.7.2 类的导入"></a>4.7.2 类的导入</h2><p><strong>一个类可以使用所属包中的所有类， 以及其他包中的公共类（public class）。</strong></p>
+<p>访问另一个包中的类有两种方式：</p>
+<ul>
+<li><p>完全限定名（fully qualified name)就是包名后面跟着类名</p>
+<p>java.time.LocalDate tofay &#x3D; java.time.LocalDate.now();</p>
+</li>
+<li><p>import 语句。</p>
+<ul>
+<li>可以使用 import 语句导入一个特定的类或整个包，</li>
+<li>import 语句应该位于源文件的顶部（但位于 package 语句的后面）</li>
+</ul>
+<p>import java.time.LocalDate;</p>
+<p><strong>然后就可以使用：</strong></p>
+<p>LocalDate today &#x3D; LocalDate.now();</p>
+</li>
+</ul>
+<p><strong>只能使用“*”导入一个包，而不能使用import java.* 或import java.*.* 导入以java为前缀的所有包</strong></p>
+<blockquote>
+<p>若发生命名冲突就需注意导入的两个包是否有同名类</p>
+<p>可加一个特定的 import 语句来解决:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br></pre></td></tr></table></figure>
+
+<p>若两个 Date 类都需要使用，可以在类名前加上完整的包名，即使用完全限定名。</p>
+<blockquote>
+<p>在包中定位类是编译器的工作。类文件中的字节码总是使用完整的包名引用其他类。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>import 和 #include 并没有共同之处</li>
+</ul>
+<h2 id="4-7-3-静态导入"><a href="#4-7-3-静态导入" class="headerlink" title="4.7.3 静态导入"></a>4.7.3 静态导入</h2>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://zhangqinc.github.io/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/" title="面向对象程序设计简概" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/25/面向对象程序设计简概/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhangQinC" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhangQinC" target="_blank"><span class="text-dark">zhangQinC</span><small class="ml-1x">Web Develop &amp; Design Leaner</small></a></h3>
+        <div>Develop Leaner。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/" title="面向对象的三大特征"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

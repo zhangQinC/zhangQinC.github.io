@@ -1,3 +1,4 @@
+https://zhangqinc.github.io/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/
 https://zhangqinc.github.io/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/
 https://zhangqinc.github.io/2022/07/25/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/
 https://zhangqinc.github.io/2022/07/24/autoboxing/
@@ -14,4 +15,5 @@ https://zhangqinc.github.io/2022/07/23/hello-world/
 https://zhangqinc.github.io/
 https://zhangqinc.github.io/tags/Java-SE/
 https://zhangqinc.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/
+https://zhangqinc.github.io/tags/Core-Java/
 https://zhangqinc.github.io/categories/Java-SE/
