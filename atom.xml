@@ -6,7 +6,7 @@
   <link href="https://zhangqinc.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhangqinc.github.io/"/>
-  <updated>2022-07-25T10:06:12.874Z</updated>
+  <updated>2022-07-25T10:29:04.950Z</updated>
   <id>https://zhangqinc.github.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>抽象类与接口简介整理</title>
+    <link href="https://zhangqinc.github.io/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/"/>
+    <id>https://zhangqinc.github.io/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/</id>
+    <published>2022-07-25T10:29:04.000Z</published>
+    <updated>2022-07-25T10:29:04.950Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JDK环境配置</title>
+    <link href="https://zhangqinc.github.io/2022/07/25/JDK%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://zhangqinc.github.io/2022/07/25/JDK%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-07-25T10:16:39.000Z</published>
+    <updated>2022-07-25T10:25:27.386Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><strong>Write once，run anywhere</strong></p><p>主要用于web开发</p><ul><li><p>jdk: Java Development Kit</p><p>java开发工具</p></li><li><p>jre: java Runtime Environment</p><p>java运行环境</p></li><li><p>jvm: java Virtual Machine</p><p>java虚拟机</p></li></ul><h2 id="java环境变量配置"><a href="#java环境变量配置" class="headerlink" title="java环境变量配置"></a>java环境变量配置</h2><p>JAVA_HOME 对应路径为jdk的安装目录</p><p>配置path变量 <code>%JAVA_HOME%\bin</code> %%是指引用路径，即，jdk下的bin目录</p><p><code>%JAVA_HOMOE%\jre\bin</code> </p><p>都对应的是真实的目录</p><h2 id="测试jdk是否安装成功"><a href="#测试jdk是否安装成功" class="headerlink" title="测试jdk是否安装成功"></a>测试jdk是否安装成功</h2><p>cmd中，java -version 查看jdk版本信息—&gt;查看成功即安装ok。</p><h2 id="了解jdk目录"><a href="#了解jdk目录" class="headerlink" title="了解jdk目录"></a>了解jdk目录</h2><ul><li>bin 放一些可执行程序，还有一些运行工具</li><li>include 因为是c编写的，在启动时需要去引入一些c的头文件</li><li>jre Java运行环境</li><li>lib Java一些类库文件</li><li>src 一些资源文件，一些源代码。。</li></ul><h2 id="如何手动编译运行Java代码文件"><a href="#如何手动编译运行Java代码文件" class="headerlink" title="如何手动编译运行Java代码文件"></a>如何手动编译运行Java代码文件</h2><blockquote><ol><li>编写后在该目录打开cmd窗口</li><li>执行命令<code>javac 文件名.java</code>（生成了class文件）</li><li>执行命令 <code>java 文件名</code> （运行了class文件）</li></ol></blockquote><h2 id="程序运行机制"><a href="#程序运行机制" class="headerlink" title="程序运行机制"></a>程序运行机制</h2><ul><li><p>编译型 -&gt; 操作 系统 c&#x2F;c++</p></li><li><p>解释型 -&gt; 网页，速度</p><ul><li>各有利弊</li></ul></li><li><p>程序运行机制</p></li></ul><h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><ul><li>集成开发环境，用于提供程序开发环境的软件，将开发过程中需要使用的各种功能（开发、运行、打包、测试、项目管理、连接。。。）工具整合为一个统一的软件，IDE</li></ul><p>IDEA </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Java&quot;&gt;&lt;a href=&quot;#Java&quot; class=&quot;headerlink&quot; title=&quot;Java&quot;&gt;&lt;/a&gt;Java&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Write once，run anywhere&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;主要用于web开发&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/categories/Java-SE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>面向对象程序设计简概</title>
