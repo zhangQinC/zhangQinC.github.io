@@ -6,7 +6,7 @@
   <link href="https://zhangqinc.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhangqinc.github.io/"/>
-  <updated>2022-07-25T10:29:04.950Z</updated>
+  <updated>2022-07-31T04:00:47.013Z</updated>
   <id>https://zhangqinc.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>throwable</title>
+    <link href="https://zhangqinc.github.io/2022/07/31/throwable/"/>
+    <id>https://zhangqinc.github.io/2022/07/31/throwable/</id>
+    <published>2022-07-31T04:00:02.000Z</published>
+    <updated>2022-07-31T04:00:47.013Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java中的异常处理"><a href="#Java中的异常处理" class="headerlink" title="Java中的异常处理"></a>Java中的异常处理</h1><p>在Java中，如果某个方法不能够采用正常的途径完成它的任务，可以通过另外一个路径退出方法。</p><p>在这种情况下，方法并不返回任何值，而是抛出（throw）一个封装了错误信息的对象。</p><blockquote><p>注意，这个方法会立刻退出，并不返回任何值。</p><p>此外，也不会从调用这个方法的代码继续执行，取而代之的是，异常处理机制开始搜索能够处理这种异常状况的异常处理器（exception handler）。</p></blockquote><h1 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h1><p>异常对象都是派生于<code>Throwable</code>类的</p><p>如果Java中内置的异常类不能满足要求，我们还可以创建自己的异常类。</p><p><img src="D:\Blog\blog\source_posts\image-20220729145717500.png" alt="image-20220729145717500"></p><ul><li>Error类层次结构描述了Java运行时系统的内部错误和资源耗尽错误，这是很严重的错误。</li><li>而Exception层次结构是代表了异常类。这是要重点关注的。</li></ul><p>Exception又大概分为两个分支:</p><ul><li><p>派生于<code>RuntimeException</code>的异常</p></li><li><p>其他异常。</p><p>如果程序本身没有问题，但由于像I&#x2F;O错误这种问题导致的异常属于其他异常。</p></li></ul><p><strong>如果出现<code>RuntimeException</code>异常，那么一定是你的问题（代码问题）</strong></p><blockquote><p>Java语言规范将派生于<code>Error</code>类或者<code>RuntimeException</code>类的所有异常称为<strong>非检查型（&#96;&#96;unchecked<code>）异常**。所有的其他异常称为**检查型（</code>checked&#96;）异常</strong>.</p></blockquote><hr><p>异常处理：两种方案</p><ul><li>抛出异常（throws）</li><li>捕获异常（catch）</li></ul><h1 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h1><p>要在方法首部指出这个方法可能抛出一个异常，所以要修饰方法首部。</p><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> a)</span> <span class="keyword">throws</span> RuntimeException&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 此方法抛出了一个RuntimeException异常。</span></span><br><span class="line"><span class="comment">// 此方法运行时可能会出错而抛出一个RuntimeException包括它的子类。</span></span><br></pre></td></tr></table></figure><h1 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h1><p>有些代码必须捕获异常，捕获异常需要做更多的规划。</p><blockquote><p>如果发生了某个异常，但没有在任何地方捕获它，程序就会终止。</p></blockquote><p><strong>想要捕获一个异常，需要使用<code>try/catch</code>语句块。</strong></p><p>如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// code</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (ExceptionType e)&#123;</span><br><span class="line">    <span class="comment">// handler for this type</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">// 一定执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p>如果try语句块中的任何代码抛出了catch子句中指定的一个异常类，则：</p><ul><li>程序将跳过try语句块的其余代码。</li><li>程序将执行catch子句中的代码。</li></ul></li><li><p>如果try语句块中的代码没有抛出任何异常，那么程序将跳过catch子句。</p></li><li><p>finally中的语句一定执行，如回收资源，关闭流等操作</p></li></ul><h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><p>&#x2F;&#x2F;TODO</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Java中的异常处理&quot;&gt;&lt;a href=&quot;#Java中的异常处理&quot; class=&quot;headerlink&quot; title=&quot;Java中的异常处理&quot;&gt;&lt;/a&gt;Java中的异常处理&lt;/h1&gt;&lt;p&gt;在Java中，如果某个方法不能够采用正常的途径完成它的任务，可以通过另外一个</summary>
+      
+    
+    
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/categories/Java-SE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>抽象类与接口简介整理</title>
