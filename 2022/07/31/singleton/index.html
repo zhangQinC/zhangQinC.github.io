@@ -17,20 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Hello World | chuan&#39;s blog</title>
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <title>singleton | chuan&#39;s blog</title>
+  <meta name="description" content="单例模式当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。  顾名思义，’’单例’’,即只有一个实例的情况。  要使用单例模式就必然要禁止外界随意创建类的对象，我们都知道，在将构造器私有化之后，外界即不可通过构造函数来创建类对应的对象。所以使用单例模式的第一步：  将构造函数私有化，以避免外界随意将该类实例化。  既然不能够从外部通过构造器来对类进行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://zhangqinc.github.io/2022/07/23/hello-world/index.html">
+<meta property="og:title" content="singleton">
+<meta property="og:url" content="https://zhangqinc.github.io/2022/07/31/singleton/index.html">
 <meta property="og:site_name" content="zhang&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="单例模式当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。  顾名思义，’’单例’’,即只有一个实例的情况。  要使用单例模式就必然要禁止外界随意创建类的对象，我们都知道，在将构造器私有化之后，外界即不可通过构造函数来创建类对应的对象。所以使用单例模式的第一步：  将构造函数私有化，以避免外界随意将该类实例化。  既然不能够从外部通过构造器来对类进行">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-23T05:24:15.056Z">
-<meta property="article:modified_time" content="2022-07-23T05:24:15.056Z">
+<meta property="article:published_time" content="2022-07-31T09:03:14.000Z">
+<meta property="article:modified_time" content="2022-07-31T09:04:02.867Z">
 <meta property="article:author" content="Zhang">
+<meta property="article:tag" content="面试题">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhangqinc.github.io/2022/07/23/hello-world/index.html">
+  <link rel="canonical" href="https://zhangqinc.github.io/2022/07/31/singleton/index.html">
   
     <link rel="alternate" href="/atom.xml" title="zhang&#39;s blog" type="application/atom+xml">
   
@@ -337,14 +338,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-singleton" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      singleton
     </h1>
   
 
@@ -352,34 +353,66 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/07/23/hello-world/" class="article-date">
-	  <time datetime="2022-07-23T05:24:15.056Z" itemprop="datePublished">2022-07-23</time>
+	<a href="/2022/07/31/singleton/" class="article-date">
+	  <time datetime="2022-07-31T09:03:14.000Z" itemprop="datePublished">2022-07-31</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Java-SE/">Java SE</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a>
+  </span>
+
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/23/hello-world/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/31/singleton/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。</p>
+<blockquote>
+<p>顾名思义，’’单例’’,即只有一个实例的情况。</p>
+</blockquote>
+<p>要使用单例模式就必然要禁止外界随意创建类的对象，我们都知道，在将构造器私有化之后，外界即不可通过构造函数来创建类对应的对象。所以使用单例模式的第一步：</p>
+<ol>
+<li><strong>将构造函数私有化，以避免外界随意将该类实例化。</strong></li>
+</ol>
+<p>既然不能够从外部通过构造器来对类进行实例化，我们就需要从内部创建该类的对象并提供一个能够返回对象的方法，即第二步：</p>
+<ol start="2">
+<li><strong>通过静态方法从内部创建该类对象并返回。（调用此方法即可获取类的对象</strong>）</li>
+</ol>
+<p>单例模式在Java中通常有两种表现形式。</p>
+<ul>
+<li>懒汉式</li>
+<li>饿汉式</li>
+</ul>
+<h2 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h2><p>第一次引用类是才进行对象实例化，即在调用的<code>getInstance()</code>方法块中创建类的对象再返回。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">singleton</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(singleton == <span class="literal">null</span>)&#123;</span><br><span class="line">            singleton = <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
+<li>节约内存</li>
+</ul>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
+<li>有线程安全问题</li>
+</ul>
+<h2 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h2><p>定义对象变量时就将其初始化，在类加载时就进行对象的实例化，当调用<code>getInstance()</code>方法时返回该对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">singleton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h3><ul>
+<li>线程安全，提前加载到内存</li>
+</ul>
+<h3 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h3><ul>
+<li>提前加载到内存，资源占用</li>
+</ul>
 
       
     </div>
@@ -389,7 +422,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhangqinc.github.io/2022/07/23/hello-world/" title="Hello World" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/23/hello-world/</a>
+      <a href="https://zhangqinc.github.io/2022/07/31/singleton/" title="singleton" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/31/singleton/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -435,10 +468,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/07/23/Array/" title="Array"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2022/07/31/throwable/" title="throwable"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>

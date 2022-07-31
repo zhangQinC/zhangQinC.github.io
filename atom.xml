@@ -6,7 +6,7 @@
   <link href="https://zhangqinc.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhangqinc.github.io/"/>
-  <updated>2022-07-31T04:00:47.013Z</updated>
+  <updated>2022-07-31T09:04:02.867Z</updated>
   <id>https://zhangqinc.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>singleton</title>
+    <link href="https://zhangqinc.github.io/2022/07/31/singleton/"/>
+    <id>https://zhangqinc.github.io/2022/07/31/singleton/</id>
+    <published>2022-07-31T09:03:14.000Z</published>
+    <updated>2022-07-31T09:04:02.867Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。</p><blockquote><p>顾名思义，’’单例’’,即只有一个实例的情况。</p></blockquote><p>要使用单例模式就必然要禁止外界随意创建类的对象，我们都知道，在将构造器私有化之后，外界即不可通过构造函数来创建类对应的对象。所以使用单例模式的第一步：</p><ol><li><strong>将构造函数私有化，以避免外界随意将该类实例化。</strong></li></ol><p>既然不能够从外部通过构造器来对类进行实例化，我们就需要从内部创建该类的对象并提供一个能够返回对象的方法，即第二步：</p><ol start="2"><li><strong>通过静态方法从内部创建该类对象并返回。（调用此方法即可获取类的对象</strong>）</li></ol><p>单例模式在Java中通常有两种表现形式。</p><ul><li>懒汉式</li><li>饿汉式</li></ul><h2 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h2><p>第一次引用类是才进行对象实例化，即在调用的<code>getInstance()</code>方法块中创建类的对象再返回。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">singleton</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(singleton == <span class="literal">null</span>)&#123;</span><br><span class="line">            singleton = <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul><li>节约内存</li></ul><h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul><li>有线程安全问题</li></ul><h2 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h2><p>定义对象变量时就将其初始化，在类加载时就进行对象的实例化，当调用<code>getInstance()</code>方法时返回该对象。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">singleton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h3><ul><li>线程安全，提前加载到内存</li></ul><h3 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h3><ul><li>提前加载到内存，资源占用</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h1&gt;&lt;p&gt;当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。&lt;/p&gt;
+&lt;blockqu</summary>
+      
+    
+    
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/categories/Java-SE/"/>
+    
+    
+    <category term="面试题" scheme="https://zhangqinc.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>throwable</title>
