@@ -17,20 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>抽象类与接口简介整理 | chuan&#39;s blog</title>
-  <meta name="description" content="My Blog">
+  <title>Java中super关键字的用法 | chuan&#39;s blog</title>
+  <meta name="description" content="super的作用super 可以用来调用父类中的方法或构造器 调用父类中的方法：若父类中的某些方法对子类不适用。即可以在子类中提供一个新的方法来覆盖&#x2F;重写（override）父类中的这个方法 eg：Manager 方法继承了 Employee 方法,现在，现在要在子类中重写父类中的getSalary方法（获取私有字段salary的值）： 1234567public class Manag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="抽象类与接口简介整理">
-<meta property="og:url" content="https://zhangqinc.github.io/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/index.html">
+<meta property="og:title" content="Java中super关键字的用法">
+<meta property="og:url" content="https://zhangqinc.github.io/2022/07/31/super/index.html">
 <meta property="og:site_name" content="zhang&#39;s blog">
-<meta property="og:description" content="My Blog">
+<meta property="og:description" content="super的作用super 可以用来调用父类中的方法或构造器 调用父类中的方法：若父类中的某些方法对子类不适用。即可以在子类中提供一个新的方法来覆盖&#x2F;重写（override）父类中的这个方法 eg：Manager 方法继承了 Employee 方法,现在，现在要在子类中重写父类中的getSalary方法（获取私有字段salary的值）： 1234567public class Manag">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-25T10:29:04.000Z">
-<meta property="article:modified_time" content="2022-07-25T10:29:04.950Z">
+<meta property="article:published_time" content="2022-07-31T10:21:06.000Z">
+<meta property="article:modified_time" content="2022-07-31T10:21:50.935Z">
 <meta property="article:author" content="Zhang">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zhangqinc.github.io/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/index.html">
+  <link rel="canonical" href="https://zhangqinc.github.io/2022/07/31/super/index.html">
   
     <link rel="alternate" href="/atom.xml" title="zhang&#39;s blog" type="application/atom+xml">
   
@@ -337,14 +337,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-抽象类与接口简介整理" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-super" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      抽象类与接口简介整理
+      Java中super关键字的用法
     </h1>
   
 
@@ -352,22 +352,72 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/" class="article-date">
-	  <time datetime="2022-07-25T10:29:04.000Z" itemprop="datePublished">2022-07-25</time>
+	<a href="/2022/07/31/super/" class="article-date">
+	  <time datetime="2022-07-31T10:21:06.000Z" itemprop="datePublished">2022-07-31</time>
 	</a>
 </span>
         
-        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Java-SE/">Java SE</a>
+  </span>
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/#comments" class="article-comment-link">Comments</a></span>
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/31/super/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <h1 id="super的作用"><a href="#super的作用" class="headerlink" title="super的作用"></a>super的作用</h1><p><strong>super 可以用来调用父类中的方法或构造器</strong></p>
+<h1 id="调用父类中的方法："><a href="#调用父类中的方法：" class="headerlink" title="调用父类中的方法："></a>调用父类中的方法：</h1><p><strong>若父类中的某些方法对子类不适用。即可以在子类中提供一个新的方法来覆盖&#x2F;重写（override）父类中的这个方法</strong></p>
+<p>eg：<code>Manager</code> 方法继承了 <code>Employee</code> 方法,现在，现在要在子类中重写父类中的<code>getSalary</code>方法（获取私有字段salary的值）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Manager</span> <span class="keyword">extends</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getSalary</span><span class="params">()</span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;      </span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>若：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getSalary</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> salary + bonus;<span class="comment">// won&#x27;t work</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样是不行的，因为只有 <code>Employee</code> 方法能直接访问 <code>Employee</code> 类的私有字段。所以 <code>Manager</code> 类的<code>getSalary</code> 方法不能直接访问 <code>salary</code> 字段 </p>
+<ul>
+<li><p>如果 <code>Manager</code> 类要访问其父类中的私有字段，就要像其他方法一样使用公共接口， 在这里的话就是要使用<code>Employee</code> 类中的公共方法<code>getSalary</code> </p>
+</li>
+<li><p>现在：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getSalary</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">baseSalary</span> <span class="operator">=</span> getSalary();<span class="comment">//still won&#x27;t work</span></span><br><span class="line">    <span class="keyword">return</span> baseSalary + bonus;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还是有问题的，因为它调用<code>getSalary()</code> 方法时是在调用<code>Manager</code>类中的方法（调用自身）。</p>
+</li>
+</ul>
+<h3 id="super"><a href="#super" class="headerlink" title="super"></a>super</h3><p>为解决上述问题，可以使用特殊的关键字<code>super</code></p>
+<p>super 可以使我们调用父类中的方法。</p>
+<p><strong><code>super.getSalary();</code></strong></p>
+<p><strong>此语句调用的是<code>Employee</code>类中的<code>getSalary</code>方法</strong></p>
+<p><del>super 与this 不一样，因为super不是一个对象引用</del></p>
+<h1 id="super调用父类的构造器"><a href="#super调用父类的构造器" class="headerlink" title="super调用父类的构造器"></a>super调用父类的构造器</h1><p>例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Manager</span><span class="params">(String name, <span class="type">double</span> salary. <span class="type">int</span> year, <span class="type">int</span> month, <span class="type">int</span> day)</span>&#123;</span><br><span class="line">    <span class="built_in">super</span>(name, salary, year, month, day);</span><br><span class="line">    bonus = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里的super语句表示调用父类中有对应参数类型的构造器</strong></p>
+<blockquote>
+<p>如果子类的构造器没有显式的调用父类的构造器，将自动调用父类的无参构造器，若此时父类中没有无参构造器就会报错</p>
+</blockquote>
+<p>注：</p>
+<blockquote>
+<p>this的两个含义:</p>
+<ol>
+<li>指示隐式参数的引用</li>
+<li>调用该类的其他构造器</li>
+</ol>
+<p>super的两个含义：</p>
+<ol>
+<li>调用超类的方法</li>
+<li>调用超类的构造器</li>
+</ol>
+</blockquote>
+<hr>
+<p>内容自《Java核心技术卷I》 第五章 继承</p>
+
       
     </div>
     <div class="article-footer">
@@ -376,7 +426,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhangqinc.github.io/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/" title="抽象类与接口简介整理" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/25/抽象类与接口简介整理/</a>
+      <a href="https://zhangqinc.github.io/2022/07/31/super/" title="Java中super关键字的用法" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/31/super/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -422,13 +472,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/07/31/throwable/" title="throwable"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/07/25/JDK%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="JDK环境配置"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/07/31/singleton/" title="单例模式"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

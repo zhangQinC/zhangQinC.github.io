@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhangqinc.github.io/2022/07/31/super/</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhangqinc.github.io/2022/07/31/singleton/</loc>
     
     <lastmod>2022-07-31</lastmod>
@@ -128,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://zhangqinc.github.io/books/index.html</loc>
+    <loc>https://zhangqinc.github.io/about/index.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     
@@ -137,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://zhangqinc.github.io/about/index.html</loc>
+    <loc>https://zhangqinc.github.io/books/index.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     

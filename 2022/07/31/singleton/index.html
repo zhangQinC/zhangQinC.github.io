@@ -17,16 +17,16 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>singleton | chuan&#39;s blog</title>
+  <title>单例模式 | chuan&#39;s blog</title>
   <meta name="description" content="单例模式当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。  顾名思义，’’单例’’,即只有一个实例的情况。  要使用单例模式就必然要禁止外界随意创建类的对象，我们都知道，在将构造器私有化之后，外界即不可通过构造函数来创建类对应的对象。所以使用单例模式的第一步：  将构造函数私有化，以避免外界随意将该类实例化。  既然不能够从外部通过构造器来对类进行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="singleton">
+<meta property="og:title" content="单例模式">
 <meta property="og:url" content="https://zhangqinc.github.io/2022/07/31/singleton/index.html">
 <meta property="og:site_name" content="zhang&#39;s blog">
 <meta property="og:description" content="单例模式当我们的一个类需要要求他最多只有一个对象时，即需要确保此类只有一个实例存在时，需要使用到单例模式。  顾名思义，’’单例’’,即只有一个实例的情况。  要使用单例模式就必然要禁止外界随意创建类的对象，我们都知道，在将构造器私有化之后，外界即不可通过构造函数来创建类对应的对象。所以使用单例模式的第一步：  将构造函数私有化，以避免外界随意将该类实例化。  既然不能够从外部通过构造器来对类进行">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-31T09:03:14.000Z">
-<meta property="article:modified_time" content="2022-07-31T09:04:02.867Z">
+<meta property="article:modified_time" content="2022-07-31T09:08:39.801Z">
 <meta property="article:author" content="Zhang">
 <meta property="article:tag" content="面试题">
 <meta name="twitter:card" content="summary">
@@ -209,7 +209,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-SE/">Java SE</a><span class="category-list-count">9</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-SE/">Java SE</a><span class="category-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -238,7 +238,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">12</span></li></ul>
     </div>
   </div>
 
@@ -257,7 +257,22 @@
                 <a class="category-link" href="/categories/Java-SE/">Java SE</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/31/singleton/" class="title">singleton</a>
+                <a href="/2022/07/31/super/" class="title">Java中super关键字的用法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-31T10:21:06.000Z" itemprop="datePublished">2022-07-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/31/singleton/" class="title">单例模式</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-07-31T09:03:14.000Z" itemprop="datePublished">2022-07-31</time>
@@ -310,21 +325,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/Java-SE/">Java SE</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AE%80%E6%A6%82/" class="title">面向对象程序设计简概</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-07-25T10:02:15.000Z" itemprop="datePublished">2022-07-25</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -345,7 +345,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      singleton
+      单例模式
     </h1>
   
 
@@ -422,7 +422,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zhangqinc.github.io/2022/07/31/singleton/" title="singleton" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/31/singleton/</a>
+      <a href="https://zhangqinc.github.io/2022/07/31/singleton/" title="单例模式" target="_blank" rel="external">https://zhangqinc.github.io/2022/07/31/singleton/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -467,6 +467,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/07/31/super/" title="Java中super关键字的用法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
     
     
     <li class="next">

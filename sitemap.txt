@@ -1,3 +1,4 @@
+https://zhangqinc.github.io/2022/07/31/super/
 https://zhangqinc.github.io/2022/07/31/singleton/
 https://zhangqinc.github.io/2022/07/31/throwable/
 https://zhangqinc.github.io/2022/07/25/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%AE%80%E4%BB%8B%E6%95%B4%E7%90%86/
@@ -12,8 +13,8 @@ https://zhangqinc.github.io/tags/index.html
 https://zhangqinc.github.io/categories/index.html
 https://zhangqinc.github.io/links/index.html
 https://zhangqinc.github.io/repository/index.html
-https://zhangqinc.github.io/books/index.html
 https://zhangqinc.github.io/about/index.html
+https://zhangqinc.github.io/books/index.html
 https://zhangqinc.github.io/404.html
 https://zhangqinc.github.io/2022/07/23/hello-world/
 https://zhangqinc.github.io/
