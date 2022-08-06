@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhangqinc.github.io/2022/08/06/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0-md/</loc>
+    
+    <lastmod>2022-08-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhangqinc.github.io/2022/07/31/super/</loc>
     
     <lastmod>2022-07-31</lastmod>
@@ -175,7 +184,7 @@
 
   <url>
     <loc>https://zhangqinc.github.io/</loc>
-    <lastmod>2022-07-31</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -183,14 +192,14 @@
   
   <url>
     <loc>https://zhangqinc.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2022-07-31</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangqinc.github.io/tags/Core-Java/</loc>
-    <lastmod>2022-07-31</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -199,7 +208,7 @@
   
   <url>
     <loc>https://zhangqinc.github.io/categories/Java-SE/</loc>
-    <lastmod>2022-07-31</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

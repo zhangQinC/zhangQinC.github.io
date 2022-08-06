@@ -1,3 +1,4 @@
+https://zhangqinc.github.io/2022/08/06/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0-md/
 https://zhangqinc.github.io/2022/07/31/super/
 https://zhangqinc.github.io/2022/07/31/singleton/
 https://zhangqinc.github.io/2022/07/31/throwable/

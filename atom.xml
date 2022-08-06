@@ -6,7 +6,7 @@
   <link href="https://zhangqinc.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhangqinc.github.io/"/>
-  <updated>2022-07-31T10:21:50.935Z</updated>
+  <updated>2022-08-06T01:59:14.904Z</updated>
   <id>https://zhangqinc.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>可变参数.md</title>
+    <link href="https://zhangqinc.github.io/2022/08/06/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0-md/"/>
+    <id>https://zhangqinc.github.io/2022/08/06/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0-md/</id>
+    <published>2022-08-06T01:57:29.000Z</published>
+    <updated>2022-08-06T01:59:14.904Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Java中可以提供参数数量可变的方法"><a href="#Java中可以提供参数数量可变的方法" class="headerlink" title="Java中可以提供参数数量可变的方法"></a>Java中可以提供参数数量可变的方法</h2><p>即变参（<code>varargs</code>）方法</p><p>比如：经典的<code>printf</code>方法。例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;%d&quot;</span>, n);</span><br><span class="line">System.out.printf(<span class="string">&quot;%d,%s&quot;</span>,n,<span class="string">&quot;abcd&quot;</span>);</span><br></pre></td></tr></table></figure><p>上面两条语句调用同一个方法，但一个调用有两个参数，一个有三个参数。</p><p>或许我们可以讲<code>printf</code>重载，但是如果我们需要给<code>printf</code>传递，更多参数呢，十个，十五个？</p><p><code>printf</code>方法是这样定义的：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PrintStream</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> PrintStream <span class="title function_">printf</span><span class="params">(String fmt, Object... args)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> format(fmt, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里的省略号(<code>...</code>)是Java代码的一部分，表示这个方法可以接收任意个该类型的 数据。</p><blockquote><p>实际上，<code>printf</code>接受两个参数，一个是格式化字符串，一个是Object[]数组，</p><p>其实，Object数组存放着其他所有传递的参数。（若是基本数据类型，就会自动的装箱）</p></blockquote><p>这就是Java中可变参数的特性，它可以让我们为方法定义一个可变长度的参数。以避免需要同时重载 传递1-10个参数的方法，甚至更多。</p><p>当我们将参数定义为可变的，在调用方法时，<strong>会将传递的多个同类型的参数存入一个数组中</strong>，也就是说，我们<strong>也可以直接将一个数组传给方法</strong>。</p><p>例如：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.printf(<span class="string">&quot;%d %s&quot;</span>, <span class="keyword">new</span> <span class="title class_">Object</span>[] &#123;<span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">1</span>),abc&#125;);</span><br></pre></td></tr></table></figure><p>下面是一个自定义的有可变参数的方法，计算若干个数中最大值：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">max</span><span class="params">(<span class="type">double</span>... values)</span>&#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">largest</span> <span class="operator">=</span> Double.NEGATIVE_INFINITY;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">double</span> e: values)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v &gt; largest)&#123;</span><br><span class="line">            largest = v;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> largest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>调用上述方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">m</span> <span class="operator">=</span> max&#123;<span class="number">1</span>, <span class="number">2.4</span>, <span class="number">3.4</span>&#125;;</span><br><span class="line"><span class="comment">// 编译器会将new double[]&#123;1, 2.4, 3.4&#125;传给max方法</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Java中可以提供参数数量可变的方法&quot;&gt;&lt;a href=&quot;#Java中可以提供参数数量可变的方法&quot; class=&quot;headerlink&quot; title=&quot;Java中可以提供参数数量可变的方法&quot;&gt;&lt;/a&gt;Java中可以提供参数数量可变的方法&lt;/h2&gt;&lt;p&gt;即变参（&lt;c</summary>
+      
+    
+    
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/categories/Java-SE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java中super关键字的用法</title>
