@@ -6,7 +6,7 @@
   <link href="https://zhangqinc.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhangqinc.github.io/"/>
-  <updated>2022-08-06T02:02:41.183Z</updated>
+  <updated>2022-08-14T06:06:45.875Z</updated>
   <id>https://zhangqinc.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>final,finally,finalize的区别</title>
+    <link href="https://zhangqinc.github.io/2022/08/14/final-finally-finalize/"/>
+    <id>https://zhangqinc.github.io/2022/08/14/final-finally-finalize/</id>
+    <published>2022-08-14T06:05:01.000Z</published>
+    <updated>2022-08-14T06:06:45.875Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="final-finally-finalize-的区别"><a href="#final-finally-finalize-的区别" class="headerlink" title="final finally finalize 的区别"></a><code>final</code> <code>finally</code> <code>finalize</code> 的区别</h1><p><code>final</code>关键字是一个修饰符，意思为最终，不可变</p><h2 id="final-关键字用来修饰类，类的成员，以及变量。"><a href="#final-关键字用来修饰类，类的成员，以及变量。" class="headerlink" title="final 关键字用来修饰类，类的成员，以及变量。"></a><code>final</code> 关键字用来修饰<strong>类，类的成员，以及变量</strong>。</h2><ul><li><p>final修饰类时，表示该类不可被继承，即不可作为父类</p></li><li><p>final修饰方法时，表示该方法不可被覆盖重写，当有子类继承该类时，不可覆盖父类中被final修饰的方法。</p></li><li><p>final修饰变量时，称这些变量为<strong>常量</strong>，常量在定义时必须进行初始化，而且值不可更改。</p><blockquote><p>程序中有一个数据应该是固定不变且会多次使用时，将其定义为常量，以增加阅读性并保证其不会被更改。</p></blockquote></li><li><p>final修饰引用类型变量时，表示该变量的值（存放的内存地址）不可变，即其引用的对象不能变，不能改变引用其他对象，但是引用的对象的内容是可变的。</p><blockquote><p>因为引用类型变量实际存放的是一个对象的内存地址，它的值就是一个内存地址，final保证了这个存放的内存地址不可变，即只能固定引用一个初始化时引用的对象。不可更改。但是对象可以改变自己的属性，因为对象一旦创建，内存地址就固定了。</p></blockquote></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eg:</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">double</span> <span class="variable">PI</span> <span class="operator">=</span> <span class="number">3.1415936535897</span>;</span><br><span class="line"><span class="comment">// 常量在命名时，应保证所有字母均大写，单词之间用下划线隔开。</span></span><br></pre></td></tr></table></figure><h2 id="finally关键字在进行异常捕获时使用try-catch-finally中的语句块"><a href="#finally关键字在进行异常捕获时使用try-catch-finally中的语句块" class="headerlink" title="finally关键字在进行异常捕获时使用try/catch/finally中的语句块"></a><code>finally</code>关键字在进行异常捕获时使用<code>try/catch/finally</code>中的语句块</h2><p>在try&#x2F;catch语句块中，无论是否有异常发生，<code>finally</code>中的语句一定会执行。</p><p>例如一些重要的清理工作。</p><p>注：</p><ul><li>finally语句是可选的</li><li>finally中的代码一定会执行</li><li>可以使用<code>try/finally</code></li></ul><h2 id="finalize-是Object类中的方法"><a href="#finalize-是Object类中的方法" class="headerlink" title="finalize()是Object类中的方法"></a><code>finalize()</code>是Object类中的方法</h2><p><code>finalize()</code>方法会被在垃圾回收前自动执行，不需要主动调用。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;final-finally-finalize-的区别&quot;&gt;&lt;a href=&quot;#final-finally-finalize-的区别&quot; class=&quot;headerlink&quot; title=&quot;final finally finalize 的区别&quot;&gt;&lt;/a&gt;&lt;code&gt;fi</summary>
+      
+    
+    
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/categories/Java-SE/"/>
+    
+    
+    <category term="面试题" scheme="https://zhangqinc.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="Java SE" scheme="https://zhangqinc.github.io/tags/Java-SE/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中参数数量可变的方法</title>
