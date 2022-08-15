@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhangqinc.github.io/2022/08/14/Java%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%9B%E7%A7%8D%E5%AE%B9%E5%99%A8/</loc>
+    
+    <lastmod>2022-08-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhangqinc.github.io/2022/08/14/final-finally-finalize/</loc>
     
     <lastmod>2022-08-14</lastmod>
@@ -128,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://zhangqinc.github.io/repository/index.html</loc>
+    <loc>https://zhangqinc.github.io/categories/index.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     
@@ -146,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://zhangqinc.github.io/categories/index.html</loc>
+    <loc>https://zhangqinc.github.io/repository/index.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     
@@ -193,29 +202,29 @@
 
   <url>
     <loc>https://zhangqinc.github.io/</loc>
-    <lastmod>2022-08-14</lastmod>
+    <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://zhangqinc.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2022-08-14</lastmod>
+    <loc>https://zhangqinc.github.io/tags/Java-SE/</loc>
+    <lastmod>2022-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zhangqinc.github.io/tags/Java-SE/</loc>
-    <lastmod>2022-08-14</lastmod>
+    <loc>https://zhangqinc.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+    <lastmod>2022-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zhangqinc.github.io/tags/Core-Java/</loc>
-    <lastmod>2022-08-14</lastmod>
+    <lastmod>2022-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -224,7 +233,7 @@
   
   <url>
     <loc>https://zhangqinc.github.io/categories/Java-SE/</loc>
-    <lastmod>2022-08-14</lastmod>
+    <lastmod>2022-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
